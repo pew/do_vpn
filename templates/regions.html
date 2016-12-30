@@ -1,0 +1,7 @@
+<div class="list-group">
+<form ic-post-to="/launch" ic-target="#instances">
+{% for reg in regions|sort(attribute='name') %}
+<input type="hidden" name="region" value="{{ reg['slug'] }}"><button type="submit" name="region" value="{{ reg['slug'] }}" class="list-group-item">{{ reg['name'] }}</button>
+{% endfor %}
+</form>
+</div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DO VPN Server</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha256-ZT4HPpdCOt2lvDkXokHuhJfdOKSPFLzeAJik5U/Q+l4=" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intercooler-js/1.0.3/intercooler.min.js" integrity="sha256-3/fBhBqgM6ShF7F1WiOOEaSapCnbDRzjXAhML0yXLHQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+<div class="row">
+    <div class="col-md-6">
+        <h3>Launch new VPN Server in</h3>
+        <div ic-get-from="/regions" ic-trigger-on="load">
+            <i class="fa fa-spinner fa-spin fa-2x"></i> Loading Regions, wait a second...
+        </div>
+
+        <h3>Available VPN Instances</h3>
+        <div id="instances" class="" ic-src="/list" ic-poll="10s" ic-trigger-on="load">
+            <i class="fa fa-spinner fa-spin fa-2x"></i> Loading Instances, if available...
+        </div>
+        <hr>
+        <footer class="footer"><a href="https://github.com/pew/do_vpn">source</a></footer>
+    </div>
+</div>

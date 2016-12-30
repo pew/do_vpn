@@ -1,0 +1,8 @@
+<ul>
+{% for s in servers %}
+<li>{{ s['name'] }}</li>
+<dd>Status: {{ s['status'] }} | <a ic-post-to="/actions/{{ s['id'] }}/reboot">reboot</a> | {% if s['status'] == "active" %}<a ic-post-to="/actions/{{ s['id'] }}/shutoff">shutdown</a>{% else %}<a ic-post-to="/actions/{{ s['id'] }}/boot">start</a>{% endif %} | <a ic-post-to="/actions/{{ s['id'] }}/delete">delete</a></dd>
+<dd>IPv4: {{ s['IPv4'] }}</dd>
+<dd>IPv6: {{ s['IPv6'] }}</dd>
+{% endfor %}
+</ul>
